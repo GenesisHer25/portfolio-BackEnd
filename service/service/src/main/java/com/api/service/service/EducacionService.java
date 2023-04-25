@@ -5,38 +5,51 @@ import com.api.service.repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
-public class EducacionService implements IEducacionService {
+ public class EducacionService implements IEducacionService {
     
     @Autowired()
     EducacionRepository educacionRepository;
-    
-    
+
     @Override
-    public List<Educacion> consultaEducacion() {
+    public List<Educacion> getTodos() {
         
         return educacionRepository.findAll();
     }
     
-    public void guardarEducacion(@RequestBody Educacion edu) {
+    @Override
+    public List<Educacion> getEducacionByAspirante(Long idAspirante) {
+        
+        return educacionRepository.findByIdAspirante(idAspirante);
+    }
+
+    @Override
+    public void guardarEducacion(Educacion edu) {
+        
+        educacionRepository.save(edu);
+    
+    }
+
+    @Override
+    public void borrarEducacion(Long id) {
+        
+        educacionRepository.deleteById(id);
         
     }
 
-    public List<Educacion> buscarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void borrarEducacion(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Educacion buscaEducacion(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Override
+    public void editarEduacion(Educacion edu) {
+        
+        educacionRepository.save(edu);
+        
     }
     
-  
 
+   
+
+
+
+   
     
 }

@@ -4,19 +4,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Aspirante {
-   
+public class Proyecto {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)    
+    @GeneratedValue(strategy=GenerationType.SEQUENCE) 
     private Long id; 
-    private String nombre;
-    private String cargo;
+    private String nombreProyecto;
+    private Date fechaCreacion;
     private String descripcion;
-    private String foto;
-    
+    private String link;
+    private Integer idAspirante;
 }

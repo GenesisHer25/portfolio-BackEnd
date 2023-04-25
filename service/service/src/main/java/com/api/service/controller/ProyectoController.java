@@ -1,13 +1,51 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.api.service.controller;
 
-/**
- *
- * @author arman
- */
-public class ProyectoController {
+
+import com.api.service.model.Proyecto;
+import com.api.service.service.ProyectoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProyectoController {  
     
+    @Autowired()
+    ProyectoService proyectoService; 
+    
+    @GetMapping("/proyecto/todos")
+    public List<Proyecto> getProyecto(){
+        
+        return proyectoService.getTodos();
+    }
+    
+    @GetMapping("/proyecto/{idAspirante}")
+    public List<Proyecto> getProyectoByAspirante(@PathVariable Long idAspirante){
+        
+        return proyectoService.getProyectoByAspirante(idAspirante);
+    }
+    
+    @PostMapping("/proyecto/crear")
+    public String guardarProyecto(@RequestBody Proyecto proy){
+        proyectoService.guardarProyecto(proy);
+        return "Se guardo exitosamente el proyecto";
+    }
+    
+    @DeleteMapping("/proyecto/borrar/{id}")
+    public String borrarProyecto(@PathVariable Long id){
+        proyectoService.borrarProyecto(id);
+        return "Se elimino exitosamente el proyecto";
+    } 
+    
+    @PutMapping("/proyecto/editar/{id}")
+    public String editarProyecto(@RequestBody Proyecto proy){
+        proyectoService.editarProyecto(proy);
+        return "Se edito con exito el proyecto";
+    }
 }

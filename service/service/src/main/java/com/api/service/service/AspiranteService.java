@@ -31,13 +31,18 @@ import org.springframework.stereotype.Service;
         aspiranteRepository.deleteById(id);
         
     }
-
+    
     @Override
-    public Aspirante buscarAspirante(Long id) {
+    public void editarAspirante(Aspirante aspi) {
         
-        Aspirante aspi = aspiranteRepository.findById(id).orElse(null);
-        return aspi; 
+        aspiranteRepository.save(aspi);
+        
     }
+
+
+
+
+    
 
 
      

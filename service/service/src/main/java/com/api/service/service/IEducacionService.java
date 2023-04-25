@@ -4,10 +4,16 @@ import com.api.service.model.Educacion;
 import java.util.List;
 
 
-public interface IEducacionService {
+interface IEducacionService {
     
-    public List<Educacion> consultaEducacion();
+    public List<Educacion> getTodos();
     
+    public void guardarEducacion(Educacion edu);
+    
+    public void borrarEducacion(Long id);
+    
+    public void editarEduacion(Educacion edu);
+    
+    public List<Educacion> getEducacionByAspirante(Long idAspirante);
 
-    
 }

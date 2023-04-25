@@ -9,14 +9,14 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Aspirante {
-   
+public class Habilidad {
+    
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)    
+    @GeneratedValue(strategy=GenerationType.SEQUENCE) 
     private Long id; 
-    private String nombre;
-    private String cargo;
-    private String descripcion;
-    private String foto;
+    private String nombreHabilidad;
+    private String tipoHabilidad;
+    private Integer porcentaje;
+    private Integer idAspirante;
     
 }
