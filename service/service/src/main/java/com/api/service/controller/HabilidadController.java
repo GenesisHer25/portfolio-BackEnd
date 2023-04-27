@@ -53,4 +53,11 @@ public class HabilidadController {
         habilidadService.editarHabilidad (hab);
         return "Se edito con exito la habilidad";
     }
+    
+    @CrossOrigin(origins = "*")
+    @PutMapping("/habilidad/editarlista")
+    public String editarTodoHabilidad(@RequestBody List<Habilidad> listHabilidad){
+        habilidadService.editarTodoHabilidad(listHabilidad);
+        return "Se editaron con exito las habilidades";
+    }
 }

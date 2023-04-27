@@ -16,4 +16,6 @@ interface IHabilidadService {
     
     public void editarHabilidad(Habilidad hab);
     
+    public void editarTodoHabilidad(List<Habilidad> listHabilidad);
+    
 }

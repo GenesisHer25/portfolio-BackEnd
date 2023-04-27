@@ -44,5 +44,12 @@ public class HabilidadService implements IHabilidadService {
         habilidadRepository.save(hab);
         
     }
-  
+
+    @Override
+    public void editarTodoHabilidad(List<Habilidad> listHabilidad) {
+    
+    habilidadRepository.saveAll(listHabilidad);
+    
+    }
+
 }

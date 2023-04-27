@@ -16,4 +16,6 @@ interface IExperienciaService {
     
     public void editarExperiencia(Experiencia exp);
     
+    public void editarTodoExperiencia(List<Experiencia> listExperiencia);
+    
 }

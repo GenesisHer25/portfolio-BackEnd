@@ -51,4 +51,11 @@ public class ExperienciaController {
         experienciaService.editarExperiencia(exp);
         return "Se edito con exito la experiencia obtenida";
     }
+    
+    @CrossOrigin(origins = "*")
+    @PutMapping("/experiencia/editarlista")
+    public String editarTodoExperiencia(@RequestBody List<Experiencia> listExperiencia){
+        experienciaService.editarTodoExperiencia(listExperiencia);
+        return "Se edito con exito la experiencia cursada";
+    }
 }

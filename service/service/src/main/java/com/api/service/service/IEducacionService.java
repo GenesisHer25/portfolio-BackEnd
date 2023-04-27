@@ -12,8 +12,10 @@ interface IEducacionService {
     
     public void borrarEducacion(Long id);
     
-    public void editarEduacion(Educacion edu);
+    public void editarEducacion(Educacion edu);
     
     public List<Educacion> getEducacionByAspirante(Long idAspirante);
+    
+    public void editarTodoEducacion(List<Educacion> listEducacion);
 
 }

@@ -17,4 +17,6 @@ interface IProyectoService {
     
     public void editarProyecto(Proyecto proy);
     
+    public void editarTodoProyecto(List<Proyecto> listProyecto);
+    
 }

@@ -39,5 +39,10 @@ public class ExperienciaService implements IExperienciaService {
     public void editarExperiencia(Experiencia exp) {
         experienciaRepository.save(exp);
     }
+    
+    @Override
+    public void editarTodoExperiencia(List<Experiencia> listExperiencia) {
+        experienciaRepository.saveAll(listExperiencia);
+    }
 
 }

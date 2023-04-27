@@ -56,4 +56,11 @@ public class ProyectoController {
         proyectoService.editarProyecto(proy);
         return "Se edito con exito el proyecto";
     }
+    
+    @CrossOrigin(origins = "*")
+    @PutMapping("/proyecto/editarlista")
+    public String editarTodoProyecto(@RequestBody List<Proyecto> listProyecto){
+        proyectoService.editarTodoProyecto(listProyecto);
+        return "Se edito con exito el proyecto";
+    }
 }

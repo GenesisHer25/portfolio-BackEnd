@@ -51,8 +51,14 @@ public class EducacionController {
     @CrossOrigin(origins = "*")
     @PutMapping("/educacion/editar")
     public String editarEducacion(@RequestBody Educacion edu){
-        educacionService.editarEduacion(edu);
+        educacionService.editarEducacion(edu);
         return "Se edito con exito la educacion cursada";
     }
-    
+
+    @CrossOrigin(origins = "*")
+    @PutMapping("/educacion/editarlista")
+    public String editarTodoEducacion(@RequestBody List<Educacion> listEducacion){
+        educacionService.editarTodoEducacion(listEducacion);
+                return "Se edito con exito la educacion cursada";
+    }
 }

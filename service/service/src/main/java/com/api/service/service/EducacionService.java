@@ -39,17 +39,15 @@ import org.springframework.stereotype.Service;
     }
 
     @Override
-    public void editarEduacion(Educacion edu) {
+    public void editarEducacion(Educacion edu) {
         
-        educacionRepository.save(edu);
-        
+        educacionRepository.save(edu); 
     }
     
-
-   
-
-
-
-   
+    @Override
+    public void editarTodoEducacion(List<Educacion> listEducacion) {
+       educacionRepository.saveAll(listEducacion);
+    }
+     
     
 }
