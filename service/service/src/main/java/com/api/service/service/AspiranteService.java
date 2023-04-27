@@ -3,6 +3,7 @@ package com.api.service.service;
 import com.api.service.model.Aspirante;
 import com.api.service.repository.AspiranteRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,13 @@ import org.springframework.stereotype.Service;
         return  aspiranteRepository.findAll();
     }
     
+    @Override
+    public Aspirante buscarAspirante(Long id) {
+        Aspirante aspi = aspiranteRepository.findById(id).orElse(null);
+        return aspi;
+    }
+
+   
     @Override
     public void guardarAspirante(Aspirante aspi) {
         
@@ -39,11 +47,5 @@ import org.springframework.stereotype.Service;
         
     }
 
-
-
-
     
-
-
-     
 }

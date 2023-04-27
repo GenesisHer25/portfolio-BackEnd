@@ -5,6 +5,7 @@ import com.api.service.service.HabilidadService;
 import com.api.service.model.Habilidad;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,28 +20,34 @@ public class HabilidadController {
     @Autowired()
     HabilidadService habilidadService; 
     
+    @CrossOrigin(origins = "*")
     @GetMapping("/habilidad/todos")
     public List<Habilidad> getHabilidad(){
             return habilidadService.getTodos();
     }
     
+    
+    @CrossOrigin(origins = "*")
     @GetMapping("/habilidad/{idAspirante}")
     public List<Habilidad> getHabilidadByAspirante(@PathVariable Long idAspirante){
          return habilidadService.getHabilidadByAspirante(idAspirante);
     }
     
+    @CrossOrigin(origins = "*")
     @PostMapping("/habilidad/crear")
     public String guardarHabilidad(@RequestBody Habilidad hab){
         habilidadService.guardarHabilidad (hab);
         return "Se agrego exitosamente la habilidad ingresada";
     }
     
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/habilidad/borrar/{id}")
     public String borrarHabilidad(@PathVariable Long id){
         habilidadService.borrarHabilidad(id);
         return "Se elimino exitosamente la habilidad";
     } 
     
+    @CrossOrigin(origins = "*")
     @PutMapping("/habilidad/editar")
     public String editarHabilidad(@RequestBody Habilidad hab){
         habilidadService.editarHabilidad (hab);

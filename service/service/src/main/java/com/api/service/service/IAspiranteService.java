@@ -13,5 +13,7 @@ public interface IAspiranteService {
     public void borrarAspirante(Long id);
     
     public void editarAspirante(Aspirante aspi);
+    
+    public Aspirante buscarAspirante(Long id);
                
 }
