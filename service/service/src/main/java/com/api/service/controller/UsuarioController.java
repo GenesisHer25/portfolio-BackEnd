@@ -37,10 +37,10 @@ public class UsuarioController {
     
     
     @CrossOrigin(origins = "*")
-    @GetMapping("/usuario/autentication")
+    @PostMapping("/usuario/autentication")
     public Usuario autentication(@RequestBody Usuario user){
-        return usuarioService.Autentication(user);
-    }
+        return usuarioService.Autentication(user); 
+    }  
     
     
     @CrossOrigin(origins = "*")

@@ -45,9 +45,8 @@ public class ProyectoController {
     
     @CrossOrigin(origins = "*")
     @DeleteMapping("/proyecto/borrar/{id}")
-    public String borrarProyecto(@PathVariable Long id){
+    public void borrarProyecto(@PathVariable Long id){
         proyectoService.borrarProyecto(id);
-        return "Se elimino exitosamente el proyecto";
     } 
     
     @CrossOrigin(origins = "*")
@@ -58,9 +57,8 @@ public class ProyectoController {
     }
     
     @CrossOrigin(origins = "*")
-    @PutMapping("/proyecto/editarlista")
-    public String editarTodoProyecto(@RequestBody List<Proyecto> listProyecto){
+    @PostMapping("/proyecto/editarlista")
+    public void editarTodoProyecto(@RequestBody List<Proyecto> listProyecto){
         proyectoService.editarTodoProyecto(listProyecto);
-        return "Se edito con exito el proyecto";
     }
 }

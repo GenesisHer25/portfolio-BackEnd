@@ -40,9 +40,8 @@ public class ExperienciaController {
     
     @CrossOrigin(origins = "*")
     @DeleteMapping("/experiencia/borrar/{id}")
-    public String borrarExperiencia(@PathVariable Long id){
+    public void borrarExperiencia(@PathVariable Long id){
         experienciaService.borrarExperiencia(id);
-        return "La experiencia fue eliminada correctamente";
     } 
     
     @CrossOrigin(origins = "*")
@@ -53,9 +52,8 @@ public class ExperienciaController {
     }
     
     @CrossOrigin(origins = "*")
-    @PutMapping("/experiencia/editarlista")
-    public String editarTodoExperiencia(@RequestBody List<Experiencia> listExperiencia){
+    @PostMapping("/experiencia/editarlista")
+    public void editarTodoExperiencia(@RequestBody List<Experiencia> listExperiencia){
         experienciaService.editarTodoExperiencia(listExperiencia);
-        return "Se edito con exito la experiencia cursada";
     }
 }

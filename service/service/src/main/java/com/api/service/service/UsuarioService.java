@@ -28,7 +28,7 @@ public class UsuarioService implements IUsuarioService {
     
     @Override
     public Usuario Autentication(Usuario usuario) {
-         
+    
      Usuario user = usuarioRepository.findByUsernameAndPassword(usuario.getUsername(),usuario.getPassword());
      return user;
     }
@@ -51,10 +51,4 @@ public class UsuarioService implements IUsuarioService {
         usuarioRepository.save(user);
     }
 
-    
-    
-    
-
-    
-  
 }

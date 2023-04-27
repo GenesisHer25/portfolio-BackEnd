@@ -46,6 +46,7 @@ public class ProyectoService implements IProyectoService {
         proyectoRepository.save(proy);
     }
 
+    @Override
     public void editarTodoProyecto(List<Proyecto> listProyecto) {
     
         proyectoRepository.saveAll(listProyecto);

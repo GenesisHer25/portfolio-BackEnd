@@ -43,9 +43,8 @@ public class EducacionController {
     
     @CrossOrigin(origins = "*")
     @DeleteMapping("/educacion/borrar/{id}")
-    public String borrarEducacion(@PathVariable Long id){
+    public void borrarEducacion(@PathVariable Long id){
         educacionService.borrarEducacion(id);
-        return "Se elimino correctamente la educacion cursada";
     }
     
     @CrossOrigin(origins = "*")
@@ -56,9 +55,8 @@ public class EducacionController {
     }
 
     @CrossOrigin(origins = "*")
-    @PutMapping("/educacion/editarlista")
-    public String editarTodoEducacion(@RequestBody List<Educacion> listEducacion){
-        educacionService.editarTodoEducacion(listEducacion);
-                return "Se edito con exito la educacion cursada";
+    @PostMapping("/educacion/editarlista")
+    public void editarTodoEducacion(@RequestBody List<Educacion> listEducacion){
+        educacionService.editarTodoEducacion(listEducacion);     
     }
 }

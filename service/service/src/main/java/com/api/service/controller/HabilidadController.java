@@ -42,9 +42,8 @@ public class HabilidadController {
     
     @CrossOrigin(origins = "*")
     @DeleteMapping("/habilidad/borrar/{id}")
-    public String borrarHabilidad(@PathVariable Long id){
+    public void borrarHabilidad(@PathVariable Long id){
         habilidadService.borrarHabilidad(id);
-        return "Se elimino exitosamente la habilidad";
     } 
     
     @CrossOrigin(origins = "*")
@@ -55,9 +54,8 @@ public class HabilidadController {
     }
     
     @CrossOrigin(origins = "*")
-    @PutMapping("/habilidad/editarlista")
-    public String editarTodoHabilidad(@RequestBody List<Habilidad> listHabilidad){
+    @PostMapping("/habilidad/editarlista")
+    public void editarTodoHabilidad(@RequestBody List<Habilidad> listHabilidad){
         habilidadService.editarTodoHabilidad(listHabilidad);
-        return "Se editaron con exito las habilidades";
     }
 }
